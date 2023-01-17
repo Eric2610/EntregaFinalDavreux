@@ -1,0 +1,271 @@
+main{
+    height: 100vh;
+    grid-area: main;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "destacados destacados"
+    "principal secundario"
+    "principal secundario";
+
+    #destacados{
+        @include flexboxCentroEstilos;
+        background-image: linear-gradient(#C19A6B, white);
+        .iconoMegafono{
+            margin-right: 20px;
+            .iconoMegafonoEstilo{
+                width: 80px;
+                transition: height 2s;
+                &:hover{
+                    height: 120px;
+                 }
+            }
+        }
+        .destacadosTitulo{
+            .destacadosTituloEstilo{
+                font-size: 2rem;
+                font-family:'Source Serif Pro', serif;
+                font-weight: 600;   
+            }
+        }
+    }
+    #principal{
+        grid-area: principal;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        -webkit-animation: scale-up-center 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	            animation: scale-up-center 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+                @-webkit-keyframes scale-up-center {
+                    0% {
+                      -webkit-transform: scale(0.5);
+                              transform: scale(0.5);
+                    }
+                    100% {
+                      -webkit-transform: scale(1);
+                              transform: scale(1);
+                    }
+                  }
+                  @keyframes scale-up-center {
+                    0% {
+                      -webkit-transform: scale(0.5);
+                              transform: scale(0.5);
+                    }
+                    100% {
+                      -webkit-transform: scale(1);
+                              transform: scale(1);
+                    }
+                  }
+        .principalFoto{
+            .principalFotoEstilo{
+                width: 700px;
+            }
+        }
+        .principalTexto{
+            width: 75%;
+            text-align: center;
+            margin-top: 20px;
+            font-family:'Source Serif Pro', serif;
+            .principalTituloEstilo{
+                padding-bottom: 10px;
+                .principalCopeteEstilo{
+                    text-align: left;
+                }
+            }
+        }
+    }
+    #secundario{
+        grid-area: secundario;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "seccont1 seccont2"
+        "seccont3 seccont4";
+        align-items: center;
+        margin-top: 20px;
+        -webkit-animation: scale-up-center 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	            animation: scale-up-center 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        .secundarioContenedor1{
+            grid-area: seccont1;
+            .secundarioTitulo1{
+                @include tituloSecundariosCajas;
+                .secundarioTitulo1Estilo{
+                    @include tituloSecundariosEstilos;
+                }
+            }     
+        }
+        .secundarioContenedor2{
+            grid-area: seccont2;
+            .secundarioTitulo2{
+                @include tituloSecundariosCajas;
+                .secundarioTitulo2Estilo{
+                    @include tituloSecundariosEstilos;
+                }
+            }
+        }
+        .secundarioContenedor3{
+            grid-area: seccont3;
+            }
+            .secundarioTitulo3{
+                @include tituloSecundariosCajas;
+                .secundarioTitulo3Estilo{
+                    @include tituloSecundariosEstilos;
+                }
+            }
+        }
+        .secundarioContenedor4{
+            grid-area: seccont4;
+            .secundarioTitulo4{
+                @include tituloSecundariosCajas;
+                .secundarioTitulo4Estilo{
+                    @include tituloSecundariosEstilos;
+                }   
+            }
+        }
+    
+}
+@include media-up(lg){
+    main{  
+        height: 110vh;
+        display: grid;
+        grid-template-rows: 0.5fr 1fr 1fr;
+        grid-template-columns: 0.8fr 1.2fr;
+        grid-template-areas: 
+        "destacados destacados destacados"
+        "principal secundario secundario"
+        "principal secundario secundario";
+        #destacados{
+            grid-area: destacados;
+            display: flex;
+            justify-content: center;
+            .destacadosTitulo{
+                .destacadosTituloEstilo{
+                    font-size: 2rem;
+                }
+            }
+        }
+        #principal{
+            .principalFoto{
+                .principalFotoEstilo{
+                    width: 300px;;
+                }
+            }
+        }
+        #secundario{
+            .secundarioContenedor1{
+                .secundarioFoto1{
+                    .secundarioFoto1Tamaño{
+                        width: 250px;
+                    }
+                }
+                .secundarioTitulo1{
+                    width: 250px;
+                }
+            }
+            .secundarioContenedor2{
+                .secundarioFoto2{
+                    .secundarioFoto2Tamaño{
+                        width: 250px;
+                    }
+                }
+                .secundarioTitulo2{
+                    width: 250px;
+                }
+            }
+            .secundarioContenedor3{
+                position: relative;
+                bottom: 100px;
+                .secundarioFoto3{
+                    .secundarioFoto3Tamaño{
+                        width: 250px;
+                    }
+                }
+                .secundarioTitulo3{
+                    width: 250px;
+                }
+            }
+            .secundarioContenedor4{
+                position: relative;
+                bottom: 100px;
+                .secundarioFoto4{
+                    .secundarioFoto4Tamaño{
+                        width: 250px;
+                        height: 135px;
+                    }
+                }
+                .secundarioTitulo4{
+                    width: 250px;
+                }
+            }
+        }
+    }
+}
+
+@include media-up(sm){
+    main{
+        display: grid;
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "principal"
+        "secundario"
+        "secundario"
+        "secundario"
+        "secundario";
+        height: 140vh;
+        #destacados{
+            display: $desaparece;
+        }
+        #principal{
+            display: flex;
+            flex-direction: column;
+            .principalFoto{
+                margin-top: 20px;
+                width: 320px;
+                .principalFotoEstilo{
+                    width: 250px;
+                    position: relative;
+                    left: 35px;
+                }
+            }
+        }
+        #secundario{
+            display: flex;
+            flex-direction: column;
+            .secundarioContenedor1{
+                .secundarioFoto1{
+                    .secundarioFoto1Tamaño{
+                        width: 250px;
+                    }
+                }
+            }
+            .secundarioContenedor2{
+                .secundarioFoto2{
+                    margin-bottom: 20px;
+                    .secundarioFoto2Tamaño{
+                        width: 250px;
+                    }
+                }
+            }
+            .secundarioContenedor3{
+                .secundarioFoto3{
+                    .secundarioFoto3Tamaño{
+                        margin-top: 100px;
+                        width: 250px;
+                    }
+                }
+            }
+            .secundarioContenedor4{
+                .secundarioFoto4{
+                   .secundarioFoto4Tamaño{
+                        height: 140px;
+                   } 
+                }
+            }
+        }
+    }
+}

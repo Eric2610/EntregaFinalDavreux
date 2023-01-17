@@ -1,0 +1,113 @@
+@mixin reseteoListas{
+    a:link,
+    a:visited,
+    a:active {
+        list-style-type: none;
+        text-decoration: none;
+        font-family:'Source Serif Pro', serif;
+        font-weight: 600;
+    }
+}
+
+@mixin flexboxColumnCenter ($orientacion, $align){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@mixin PosicionCajaEnlace{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@mixin estilosEnlaces{
+    display: inline-block;
+    padding: 10px;
+    color: black;
+    font-size: 1.5rem;
+}
+
+@mixin flexboxCentroEstilos{
+    grid-area: destacados;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 0 10px 5px;
+    height: 200px;
+}
+
+@mixin tituloSecundariosCajas{
+    width: 300px;
+    padding: 10px;
+    text-align: center;
+}
+
+@mixin tituloSecundariosEstilos{
+    font-family:'Source Serif Pro', serif;
+    font-weight: 700;
+    color: black;
+    font-size: 1.2rem;
+}
+
+@mixin imagenFondo{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://img.freepik.com/vector-gratis/fondo-plano-celebracion-dia-periodista_23-2149525336.jpg?w=2000);
+}
+
+@mixin tituloContactoPosicion{
+    grid-area: contacto;
+    display: flex;
+    justify-content: start;
+    padding-left: 22%;
+}
+
+@mixin cajaCuerpoPosicionYAnimacion{
+    grid-area: cuerpo;
+    display: grid;
+    grid-template-rows: 0.1fr 0.1fr 0.2fr 0.3fr 0.1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "datosPersonales"
+    "nombre"
+    "email"
+    "mensaje"
+    "boton";
+    justify-items: center;
+    align-items: center;
+    -webkit-animation: scale-up-hor-left 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+            animation: scale-up-hor-left 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@mixin animacion{
+    @keyframes scale-up-hor-left {
+        0% {
+          -webkit-transform: scaleX(0.4);
+                  transform: scaleX(0.4);
+          -webkit-transform-origin: 0% 0%;
+                  transform-origin: 0% 0%;
+        }
+        100% {
+          -webkit-transform: scaleX(1);
+                  transform: scaleX(1);
+          -webkit-transform-origin: 0% 0%;
+                  transform-origin: 0% 0%;
+        }
+      }
+}
+
+$breakpoints:(
+    lg: 1024px,
+    sm: 320px, 
+);
+
+@mixin media-up($breakpoint){
+    @media (max-width: map-get($breakpoints, $breakpoint)){
+        @content;
+    }
+    
+}

@@ -1,0 +1,162 @@
+header{
+    height: 20vh;
+    grid-area: header;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "cont2 cont1";
+    align-items: center;
+    justify-items: center;
+    background-color: #c19a6bd0;
+
+    #contenedor1{
+        grid-area: cont1;
+        display: flex;
+
+        .contenedor1Lupa{
+            .contenedor1LupaTamaño{
+                height: 30px;
+                padding-right: 10px;
+                margin-top: 10px;
+            }
+        }
+        .cajaBuscador{
+            margin-top: 15px;
+        }
+        .cajasBotones{
+            .dosBotones{
+                height: 50px;
+                @include reseteoListas;
+                padding: 5px;
+                .registro, .sesion{
+                    margin-left: 20px;
+                    color: black;
+                    padding: 5px;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+    #contenedor2{
+        grid-area: cont2;
+        @include flexboxColumnCenter ($orientacion, $align);
+        .titulo{
+            .tituloEstilo{
+                font-family:'Source Serif Pro', serif;
+                font-weight: 700;
+                font-size: 4rem;
+            }
+        }
+        .contenedorTemp{
+            display: flex;
+            .sol{
+                width: 40px;
+                .solEstilo{
+                    height: 30px;
+                }
+            }
+            .temp{
+                .tempTexto{
+                    font-size: 1.5rem;
+                    font-family:'Source Serif Pro', serif;
+                    font-weight: 600;
+                }
+                .tempEstiloNumero{
+                    text-align: center;
+                    font-family:'Source Serif Pro', serif;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+}
+nav{
+    grid-area: nav;
+    background-color: #c19a6bd0;
+    .menu{
+        opacity: 0;
+        .menuEstilo{
+            width: 30px;
+        }
+    }
+    .cajaEnlaces{
+        @include PosicionCajaEnlace;
+        .reseteoListas{
+            @include reseteoListas;
+            .enlaceSeccion{
+                &:hover{
+                    color: blue;
+                    text-decoration: underline;
+                }
+            }
+            li{
+                @include estilosEnlaces;
+            }
+        }
+    }
+}
+
+@include media-up(lg){
+    header{
+        display: flex;
+        #contenedor1{
+            display: $desaparece;
+            .contenedor1Lupa{
+                display: $desaparece;
+            }
+            .cajaBuscador{
+                display: $desaparece;
+            }
+            .cajasBotones{
+                .dosBotones{
+                    display: $desaparece;
+                }
+            }
+        }
+        #contenedor2{
+            .titulo{
+                width: 80vw;
+                .tituloEstilo{
+                    text-align: center;
+                    font-size: 4rem;
+                }
+            }
+        }
+    }
+    nav{
+        background-color: #c19a6bd0;
+        display: flex;
+    }
+}
+
+@include media-up(sm){
+    header{
+        height: 10vh;
+        #contenedor2{
+            .titulo{
+                .tituloEstilo{
+                    font-size: 2rem;
+                }
+            }
+            .contenedorTemp{
+                display: $desaparece;
+            }
+        }
+    }
+
+    nav{
+        height: 10vh; 
+        .menu{
+            opacity: 1;
+            padding: 50%  25%;
+            .menuEstilo{
+                width: 40px;
+            }
+        }
+        .cajaEnlaces{
+            display: $desaparece;
+        }
+    }
+}

@@ -1,0 +1,865 @@
+@charset "UTF-8";
+body {
+  width: 100vw;
+  height: 130vh;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "nav header header" "main main main" "main main main" "main main main" "footer footer footer"; }
+
+@media (max-width: 1024px) {
+  body {
+    width: 1024px;
+    height: 180px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "nav header"  "main main" "main main" "main main" "footer footer";
+    overflow-x: hidden; } }
+
+@media (max-width: 320px) {
+  body {
+    height: 160vh;
+    width: 320px;
+    overflow-x: hidden; } }
+
+header {
+  height: 20vh;
+  grid-area: header;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "cont2 cont1";
+  align-items: center;
+  justify-items: center;
+  background-color: #c19a6bd0; }
+  header #contenedor1 {
+    grid-area: cont1;
+    display: flex; }
+    header #contenedor1 .contenedor1Lupa .contenedor1LupaTamaño {
+      height: 30px;
+      padding-right: 10px;
+      margin-top: 10px; }
+    header #contenedor1 .cajaBuscador {
+      margin-top: 15px; }
+    header #contenedor1 .cajasBotones .dosBotones {
+      height: 50px;
+      padding: 5px; }
+      header #contenedor1 .cajasBotones .dosBotones a:link,
+      header #contenedor1 .cajasBotones .dosBotones a:visited,
+      header #contenedor1 .cajasBotones .dosBotones a:active {
+        list-style-type: none;
+        text-decoration: none;
+        font-family: 'Source Serif Pro', serif;
+        font-weight: 600; }
+      header #contenedor1 .cajasBotones .dosBotones .registro, header #contenedor1 .cajasBotones .dosBotones .sesion {
+        margin-left: 20px;
+        color: black;
+        padding: 5px;
+        font-size: 1.2rem; }
+  header #contenedor2 {
+    grid-area: cont2;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    header #contenedor2 .titulo .tituloEstilo {
+      font-family: 'Source Serif Pro', serif;
+      font-weight: 700;
+      font-size: 4rem; }
+    header #contenedor2 .contenedorTemp {
+      display: flex; }
+      header #contenedor2 .contenedorTemp .sol {
+        width: 40px; }
+        header #contenedor2 .contenedorTemp .sol .solEstilo {
+          height: 30px; }
+      header #contenedor2 .contenedorTemp .temp .tempTexto {
+        font-size: 1.5rem;
+        font-family: 'Source Serif Pro', serif;
+        font-weight: 600; }
+      header #contenedor2 .contenedorTemp .temp .tempEstiloNumero {
+        text-align: center;
+        font-family: 'Source Serif Pro', serif;
+        font-weight: 600; }
+
+nav {
+  grid-area: nav;
+  background-color: #c19a6bd0; }
+  nav .menu {
+    opacity: 0; }
+    nav .menu .menuEstilo {
+      width: 30px; }
+  nav .cajaEnlaces {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; }
+    nav .cajaEnlaces .reseteoListas a:link,
+    nav .cajaEnlaces .reseteoListas a:visited,
+    nav .cajaEnlaces .reseteoListas a:active {
+      list-style-type: none;
+      text-decoration: none;
+      font-family: 'Source Serif Pro', serif;
+      font-weight: 600; }
+    nav .cajaEnlaces .reseteoListas .enlaceSeccion:hover {
+      color: blue;
+      text-decoration: underline; }
+    nav .cajaEnlaces .reseteoListas li {
+      display: inline-block;
+      padding: 10px;
+      color: black;
+      font-size: 1.5rem; }
+
+@media (max-width: 1024px) {
+  header {
+    display: flex; }
+    header #contenedor1 {
+      display: none; }
+      header #contenedor1 .contenedor1Lupa {
+        display: none; }
+      header #contenedor1 .cajaBuscador {
+        display: none; }
+      header #contenedor1 .cajasBotones .dosBotones {
+        display: none; }
+    header #contenedor2 .titulo {
+      width: 80vw; }
+      header #contenedor2 .titulo .tituloEstilo {
+        text-align: center;
+        font-size: 4rem; }
+  nav {
+    background-color: #c19a6bd0;
+    display: flex; } }
+
+@media (max-width: 320px) {
+  header {
+    height: 10vh; }
+    header #contenedor2 .titulo .tituloEstilo {
+      font-size: 2rem; }
+    header #contenedor2 .contenedorTemp {
+      display: none; }
+  nav {
+    height: 10vh; }
+    nav .menu {
+      opacity: 1;
+      padding: 50%  25%; }
+      nav .menu .menuEstilo {
+        width: 40px; }
+    nav .cajaEnlaces {
+      display: none; } }
+
+main {
+  height: 100vh;
+  grid-area: main;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "destacados destacados" "principal secundario" "principal secundario"; }
+  main #destacados {
+    grid-area: destacados;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 0 10px 5px;
+    height: 200px;
+    background-image: linear-gradient(#C19A6B, white); }
+    main #destacados .iconoMegafono {
+      margin-right: 20px; }
+      main #destacados .iconoMegafono .iconoMegafonoEstilo {
+        width: 80px;
+        transition: height 2s; }
+        main #destacados .iconoMegafono .iconoMegafonoEstilo:hover {
+          height: 120px; }
+    main #destacados .destacadosTitulo .destacadosTituloEstilo {
+      font-size: 2rem;
+      font-family: 'Source Serif Pro', serif;
+      font-weight: 600; }
+  main #principal {
+    grid-area: principal;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    -webkit-animation: scale-up-center 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: scale-up-center 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
+
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5); }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5); }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+    main #principal .principalFoto .principalFotoEstilo {
+      width: 700px; }
+    main #principal .principalTexto {
+      width: 75%;
+      text-align: center;
+      margin-top: 20px;
+      font-family: 'Source Serif Pro', serif; }
+      main #principal .principalTexto .principalTituloEstilo {
+        padding-bottom: 10px; }
+        main #principal .principalTexto .principalTituloEstilo .principalCopeteEstilo {
+          text-align: left; }
+  main #secundario {
+    grid-area: secundario;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "seccont1 seccont2" "seccont3 seccont4";
+    align-items: center;
+    margin-top: 20px;
+    -webkit-animation: scale-up-center 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: scale-up-center 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
+    main #secundario .secundarioContenedor1 {
+      grid-area: seccont1; }
+      main #secundario .secundarioContenedor1 .secundarioTitulo1 {
+        width: 300px;
+        padding: 10px;
+        text-align: center; }
+        main #secundario .secundarioContenedor1 .secundarioTitulo1 .secundarioTitulo1Estilo {
+          font-family: 'Source Serif Pro', serif;
+          font-weight: 700;
+          color: black;
+          font-size: 1.2rem; }
+    main #secundario .secundarioContenedor2 {
+      grid-area: seccont2; }
+      main #secundario .secundarioContenedor2 .secundarioTitulo2 {
+        width: 300px;
+        padding: 10px;
+        text-align: center; }
+        main #secundario .secundarioContenedor2 .secundarioTitulo2 .secundarioTitulo2Estilo {
+          font-family: 'Source Serif Pro', serif;
+          font-weight: 700;
+          color: black;
+          font-size: 1.2rem; }
+    main #secundario .secundarioContenedor3 {
+      grid-area: seccont3; }
+    main #secundario .secundarioTitulo3 {
+      width: 300px;
+      padding: 10px;
+      text-align: center; }
+      main #secundario .secundarioTitulo3 .secundarioTitulo3Estilo {
+        font-family: 'Source Serif Pro', serif;
+        font-weight: 700;
+        color: black;
+        font-size: 1.2rem; }
+  main .secundarioContenedor4 {
+    grid-area: seccont4; }
+    main .secundarioContenedor4 .secundarioTitulo4 {
+      width: 300px;
+      padding: 10px;
+      text-align: center; }
+      main .secundarioContenedor4 .secundarioTitulo4 .secundarioTitulo4Estilo {
+        font-family: 'Source Serif Pro', serif;
+        font-weight: 700;
+        color: black;
+        font-size: 1.2rem; }
+
+@media (max-width: 1024px) {
+  main {
+    height: 110vh;
+    display: grid;
+    grid-template-rows: 0.5fr 1fr 1fr;
+    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-areas: "destacados destacados destacados" "principal secundario secundario" "principal secundario secundario"; }
+    main #destacados {
+      grid-area: destacados;
+      display: flex;
+      justify-content: center; }
+      main #destacados .destacadosTitulo .destacadosTituloEstilo {
+        font-size: 2rem; }
+    main #principal .principalFoto .principalFotoEstilo {
+      width: 300px; }
+    main #secundario .secundarioContenedor1 .secundarioFoto1 .secundarioFoto1Tamaño {
+      width: 250px; }
+    main #secundario .secundarioContenedor1 .secundarioTitulo1 {
+      width: 250px; }
+    main #secundario .secundarioContenedor2 .secundarioFoto2 .secundarioFoto2Tamaño {
+      width: 250px; }
+    main #secundario .secundarioContenedor2 .secundarioTitulo2 {
+      width: 250px; }
+    main #secundario .secundarioContenedor3 {
+      position: relative;
+      bottom: 100px; }
+      main #secundario .secundarioContenedor3 .secundarioFoto3 .secundarioFoto3Tamaño {
+        width: 250px; }
+      main #secundario .secundarioContenedor3 .secundarioTitulo3 {
+        width: 250px; }
+    main #secundario .secundarioContenedor4 {
+      position: relative;
+      bottom: 100px; }
+      main #secundario .secundarioContenedor4 .secundarioFoto4 .secundarioFoto4Tamaño {
+        width: 250px;
+        height: 135px; }
+      main #secundario .secundarioContenedor4 .secundarioTitulo4 {
+        width: 250px; } }
+
+@media (max-width: 320px) {
+  main {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-areas: "principal" "secundario" "secundario" "secundario" "secundario";
+    height: 140vh; }
+    main #destacados {
+      display: none; }
+    main #principal {
+      display: flex;
+      flex-direction: column; }
+      main #principal .principalFoto {
+        margin-top: 20px;
+        width: 320px; }
+        main #principal .principalFoto .principalFotoEstilo {
+          width: 250px;
+          position: relative;
+          left: 35px; }
+    main #secundario {
+      display: flex;
+      flex-direction: column; }
+      main #secundario .secundarioContenedor1 .secundarioFoto1 .secundarioFoto1Tamaño {
+        width: 250px; }
+      main #secundario .secundarioContenedor2 .secundarioFoto2 {
+        margin-bottom: 20px; }
+        main #secundario .secundarioContenedor2 .secundarioFoto2 .secundarioFoto2Tamaño {
+          width: 250px; }
+      main #secundario .secundarioContenedor3 .secundarioFoto3 .secundarioFoto3Tamaño {
+        margin-top: 100px;
+        width: 250px; }
+      main #secundario .secundarioContenedor4 .secundarioFoto4 .secundarioFoto4Tamaño {
+        height: 140px; } }
+
+footer {
+  height: 10vh;
+  grid-area: footer;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "contacto titulofooter redes";
+  justify-items: center;
+  align-items: center;
+  background-color: #c19a6bd0; }
+  footer #contacto {
+    grid-area: contacto; }
+    footer #contacto .contactoEnlace a:link,
+    footer #contacto .contactoEnlace a:visited,
+    footer #contacto .contactoEnlace a:active {
+      list-style-type: none;
+      text-decoration: none;
+      font-family: 'Source Serif Pro', serif;
+      font-weight: 600; }
+    footer #contacto .contactoEnlace .contactoEnlaceEstilo {
+      color: black;
+      font-size: 1.2rem; }
+  footer #tituloFooter {
+    grid-area: titulofooter; }
+    footer #tituloFooter .tituloFooterEstilo {
+      font-family: 'Source Serif Pro', serif;
+      font-weight: 900;
+      font-size: 2rem; }
+  footer #redes {
+    grid-area: redes; }
+    footer #redes .redesTexto {
+      display: inline-block;
+      font-size: 1.5rem;
+      padding-right: 10px;
+      position: relative;
+      bottom: 20px; }
+    footer #redes .fb, footer #redes .wpp, footer #redes .yt, footer #redes .tw {
+      height: 30px;
+      display: inline-block;
+      margin: 10px; }
+
+@media (max-width: 1024px) {
+  footer {
+    height: 15vh;
+    grid-area: footer;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 0.5fr 1.5fr 0.5fr;
+    grid-template-areas: "contacto titulofooter redes";
+    justify-items: center;
+    align-items: center;
+    background-color: #c19a6bd0; }
+    footer #contacto .contactoEnlace .contactoEnlaceEstilo {
+      font-size: 1.5rem; }
+    footer #redes .redesTexto {
+      display: none; }
+    footer #redes .fb, footer #redes .wpp, footer #redes .yt, footer #redes .tw {
+      width: 30px;
+      height: 30px; } }
+
+@media (max-width: 320px) {
+  footer {
+    height: 10vh; }
+    footer #contacto .contactoEnlace .contactoEnlaceEstilo {
+      font-size: 1rem; }
+    footer #tituloFooter .tituloFooterEstilo {
+      font-size: 1rem;
+      text-align: center; }
+    footer #redes {
+      display: flex; }
+      footer #redes .fb, footer #redes .wpp, footer #redes .yt, footer #redes .tw {
+        width: 15px;
+        height: 15px;
+        margin: 2px; } }
+
+#grillaPolitica {
+  height: 70vh;
+  display: grid;
+  grid-template-rows: 0.5fr 1.5fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: "encabezado" "principal2"; }
+  #grillaPolitica #encabezado {
+    grid-area: encabezado;
+    display: flex;
+    align-items: center; }
+    #grillaPolitica #encabezado .contenedorNoticiasAlMinuto .inicioCaja {
+      margin-left: 20px;
+      padding-right: 10px; }
+      #grillaPolitica #encabezado .contenedorNoticiasAlMinuto .inicioCaja a:link,
+      #grillaPolitica #encabezado .contenedorNoticiasAlMinuto .inicioCaja a:visited,
+      #grillaPolitica #encabezado .contenedorNoticiasAlMinuto .inicioCaja a:active {
+        list-style-type: none;
+        text-decoration: none;
+        font-family: 'Source Serif Pro', serif;
+        font-weight: 600; }
+      #grillaPolitica #encabezado .contenedorNoticiasAlMinuto .inicioCaja .inicioEstilo {
+        font-family: 'Source Serif Pro', serif;
+        font-weight: 700;
+        color: black;
+        font-size: 1.2rem; }
+    #grillaPolitica #encabezado .tituloPolitica .tituloPoliticaEstilo {
+      font-family: 'Source Serif Pro', serif;
+      font-weight: 700;
+      color: black;
+      font-size: 1.2rem; }
+  #grillaPolitica #principal2 {
+    grid: principal2;
+    display: flex;
+    justify-content: space-around; }
+    #grillaPolitica #principal2 .noticiaPolitica .cajaAlberto .imagenAlberto {
+      width: 500px; }
+    #grillaPolitica #principal2 .noticiaPolitica2 .cajaBiden .imagenBiden {
+      width: 500px; }
+    #grillaPolitica #principal2 .noticiaPolitica3 .cajaBorell .imagenBorell {
+      width: 500px;
+      height: 280px; }
+
+@media (max-width: 1024px) {
+  #grillaPolitica #encabezado .contenedorNoticiasAlMinuto .inicioCaja .inicioEstilo {
+    font-size: 1.5rem; }
+  #grillaPolitica #encabezado .tituloPolitica .tituloPoliticaEstilo {
+    font-size: 1.5rem; }
+  #grillaPolitica #principal2 {
+    display: flex; }
+    #grillaPolitica #principal2 .noticiaPolitica .cajaAlberto .imagenAlberto {
+      width: 300px; }
+    #grillaPolitica #principal2 .noticiaPolitica .tituloAlberto .tituloAlbertoEstilo {
+      text-align: center; }
+    #grillaPolitica #principal2 .noticiaPolitica2 .cajaBiden .imagenBiden {
+      width: 300px; }
+    #grillaPolitica #principal2 .noticiaPolitica2 .tituloBiden .tituloBidenEstilo {
+      text-align: center; }
+    #grillaPolitica #principal2 .noticiaPolitica3 .cajaBorell .imagenBorell {
+      width: 300px;
+      height: 170px; }
+    #grillaPolitica #principal2 .noticiaPolitica3 .tituloBorell .tituloBorellEstilo {
+      text-align: center; } }
+
+@media (max-width: 320px) {
+  #grillaPolitica {
+    height: 80vh; }
+    #grillaPolitica #encabezado .contenedorNoticiasAlMinuto .inicioCaja .inicioEstilo {
+      font-size: 1rem; }
+    #grillaPolitica #encabezado .tituloPolitica .tituloPoliticaEstilo {
+      font-size: 1rem; }
+    #grillaPolitica #principal2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; } }
+
+#bodyPolitica {
+  height: 100vh; }
+
+@media (max-width: 1024px) {
+  body {
+    height: 180px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "nav header"  "main main" "main main" "main main" "footer footer";
+    overflow-x: hidden; } }
+
+@media (max-width: 320px) {
+  #bodyPolitica {
+    height: 100vh;
+    width: 320px;
+    overflow-x: hidden; } }
+
+#bodyEconomia {
+  height: 100vh; }
+
+@media (max-width: 1024px) {
+  body {
+    height: 180px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "nav header"  "main main" "main main" "main main" "footer footer";
+    overflow-x: hidden; } }
+
+@media (max-width: 320px) {
+  #bodyEconomia {
+    height: 100vh;
+    width: 320px;
+    overflow-x: hidden; } }
+
+#grillaEconomia {
+  height: 70vh;
+  display: grid;
+  grid-template-rows: 0.5fr 1.5fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: "encabezadoEco" "principalEco"; }
+  #grillaEconomia #encabezadoEco {
+    grid-area: encabezadoEco;
+    display: flex;
+    align-items: center; }
+    #grillaEconomia #encabezadoEco .contenedorNoticiasAlMinutoEco .inicioCajaEco {
+      margin-left: 20px;
+      padding-right: 10px; }
+      #grillaEconomia #encabezadoEco .contenedorNoticiasAlMinutoEco .inicioCajaEco a:link,
+      #grillaEconomia #encabezadoEco .contenedorNoticiasAlMinutoEco .inicioCajaEco a:visited,
+      #grillaEconomia #encabezadoEco .contenedorNoticiasAlMinutoEco .inicioCajaEco a:active {
+        list-style-type: none;
+        text-decoration: none;
+        font-family: 'Source Serif Pro', serif;
+        font-weight: 600; }
+      #grillaEconomia #encabezadoEco .contenedorNoticiasAlMinutoEco .inicioCajaEco .inicioEstilo {
+        font-family: 'Source Serif Pro', serif;
+        font-weight: 700;
+        color: black;
+        font-size: 1.2rem; }
+    #grillaEconomia #encabezadoEco .tituloEconomia {
+      margin: 2px 0 0 5px; }
+  #grillaEconomia #principalEco {
+    grid-area: principalEco;
+    display: flex;
+    justify-content: space-around; }
+    #grillaEconomia #principalEco .noticiaEconomia .cajaEnergia .imagenEnergia {
+      width: 500px;
+      height: 300px; }
+    #grillaEconomia #principalEco .noticiaEconomia2 .cajaInflacion .imagenInflacion {
+      width: 500px;
+      height: 300px; }
+    #grillaEconomia #principalEco .noticiaEconomia3 .cajapetroleo .imagenPetroleo {
+      width: 500px;
+      height: 300px; }
+
+@media (max-width: 1024px) {
+  #grillaEconomia #encabezadoEco .contenedorNoticiasAlMinutoEco .inicioCajaEco .inicioEstilo {
+    font-size: 1.5rem; }
+  #grillaEconomia #encabezadoEco .tituloEconomia .tituloEconomiaEstilo {
+    font-size: 1.5rem; }
+  #grillaEconomia #principalEco .noticiaEconomia .cajaEnergia .imagenEnergia {
+    width: 300px;
+    height: 200px; }
+  #grillaEconomia #principalEco .noticiaEconomia .tituloEnergia .tituloEnergiaTexto {
+    text-align: center; }
+  #grillaEconomia #principalEco .noticiaEconomia2 .cajaInflacion .imagenInflacion {
+    width: 300px;
+    height: 200px; }
+  #grillaEconomia #principalEco .noticiaEconomia2 .tituloInflacion .tituloInflacionTexto {
+    text-align: center; }
+  #grillaEconomia #principalEco .noticiaEconomia3 .cajapetroleo .imagenPetroleo {
+    width: 300px;
+    height: 200px; }
+  #grillaEconomia #principalEco .noticiaEconomia3 .tituloPetroleo .tituloPetroleoTexto {
+    text-align: center; } }
+
+@media (max-width: 320px) {
+  #grillaEconomia {
+    height: 90vh; }
+    #grillaEconomia #encabezadoEco .contenedorNoticiasAlMinutoEco .inicioCajaEco .inicioEstilo {
+      font-size: 1rem; }
+    #grillaEconomia #encabezadoEco .tituloEconomia .tituloEconomiaEstilo {
+      font-size: 1rem; }
+    #grillaEconomia #principalEco {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; } }
+
+#bodyLife {
+  height: 100vh; }
+
+@media (max-width: 1024px) {
+  #bodyLife {
+    height: 180px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "nav header"  "main main" "main main" "main main" "footer footer";
+    overflow-x: hidden; } }
+
+@media (max-width: 320px) {
+  #bodyLife {
+    height: 100vh;
+    width: 320px;
+    overflow-x: hidden; } }
+
+#grillaLife {
+  height: 70vh;
+  display: grid;
+  grid-template-rows: 0.5fr 1.5fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: "encabezadoLife" "principalLife"; }
+  #grillaLife #encabezadoLife {
+    grid-area: encabezadoLife;
+    display: flex;
+    align-items: center; }
+    #grillaLife #encabezadoLife .contenedorNoticiaAlMinutoLife .cajaLifeNoticias {
+      margin-left: 20px;
+      padding-right: 10px; }
+      #grillaLife #encabezadoLife .contenedorNoticiaAlMinutoLife .cajaLifeNoticias a:link,
+      #grillaLife #encabezadoLife .contenedorNoticiaAlMinutoLife .cajaLifeNoticias a:visited,
+      #grillaLife #encabezadoLife .contenedorNoticiaAlMinutoLife .cajaLifeNoticias a:active {
+        list-style-type: none;
+        text-decoration: none;
+        font-family: 'Source Serif Pro', serif;
+        font-weight: 600; }
+      #grillaLife #encabezadoLife .contenedorNoticiaAlMinutoLife .cajaLifeNoticias .inicioEstilo {
+        font-family: 'Source Serif Pro', serif;
+        font-weight: 700;
+        color: black;
+        font-size: 1.2rem; }
+    #grillaLife #encabezadoLife .tituloLife {
+      margin: 2px 0 0 5px; }
+  #grillaLife #principalLife {
+    grid-area: principalLife;
+    display: flex;
+    justify-content: space-around; }
+    #grillaLife #principalLife .noticiaLife .cajaViaje .imagenViaje {
+      width: 500px;
+      height: 300px; }
+    #grillaLife #principalLife .noticiaLife2 .cajaHoroscopo .imagenHoroscopo {
+      width: 500px;
+      height: 300px; }
+    #grillaLife #principalLife .noticiaLife3 .cajaTech .imagenTech {
+      width: 500px;
+      height: 300px; }
+
+@media (max-width: 1024px) {
+  #grillaLife #encabezadoLife .contenedorNoticiaAlMinutoLife .cajaLifeNoticias .inicioEstilo {
+    font-size: 1.5rem; }
+  #grillaLife #encabezadoLife .tituloLife .tituloLifeEstilo {
+    font-size: 1.5rem; }
+  #grillaLife #principalLife .noticiaLife .cajaViaje .imagenViaje {
+    width: 300px;
+    height: 200px; }
+  #grillaLife #principalLife .noticiaLife .tituloViaje .tituloViajeTexto {
+    text-align: center; }
+  #grillaLife #principalLife .noticiaLife2 .cajaHoroscopo .imagenHoroscopo {
+    width: 300px;
+    height: 200px; }
+  #grillaLife #principalLife .noticiaLife2 .tituloHoroscopo .tituloHoroscopoTexto {
+    text-align: center; }
+  #grillaLife #principalLife .noticiaLife3 .cajaTech .imagenTech {
+    width: 300px;
+    height: 200px; }
+  #grillaLife #principalLife .noticiaLife3 .tituloTech .tituloTechTexto {
+    text-align: center; } }
+
+@media (max-width: 320px) {
+  #grillaLife {
+    height: 90vh; }
+    #grillaLife #encabezadoLife .contenedorNoticiaAlMinutoLife .cajaLifeNoticias .inicioEstilo {
+      font-size: 1rem; }
+    #grillaLife #encabezadoLife .tituloLife .tituloLifeEstilo {
+      font-size: 1rem; }
+    #grillaLife #principalLife {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; } }
+
+#fondo {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://img.freepik.com/vector-gratis/fondo-plano-celebracion-dia-periodista_23-2149525336.jpg?w=2000); }
+
+@media (max-width: 1024px) {
+  #fondo {
+    background-image: url("https://img.freepik.com/foto-gratis/fondo-acuarela-pintada-mano-forma-cielo-nubes_24972-1095.jpg?w=2000"); } }
+
+@media (max-width: 320px) {
+  #fondo {
+    width: 320px; } }
+
+#cajaGlobal {
+  display: grid;
+  grid-template-rows: 0.7fr 0.2fr 1.1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: "."  "cabecera" "cuerpo"; }
+  #cajaGlobal .cajaCabecera {
+    grid-area: cabecera;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 0.6fr 1.4fr;
+    grid-template-areas: "inicio contacto"; }
+    #cajaGlobal .cajaCabecera .cajaCabeceraInicio {
+      grid-area: inicio;
+      display: flex;
+      justify-content: end; }
+      #cajaGlobal .cajaCabecera .cajaCabeceraInicio .reseteoInicio a:link,
+      #cajaGlobal .cajaCabecera .cajaCabeceraInicio .reseteoInicio a:visited,
+      #cajaGlobal .cajaCabecera .cajaCabeceraInicio .reseteoInicio a:active {
+        list-style-type: none;
+        text-decoration: none;
+        font-family: 'Source Serif Pro', serif;
+        font-weight: 600; }
+      #cajaGlobal .cajaCabecera .cajaCabeceraInicio .reseteoInicio .inicioEstilo:hover {
+        color: blue;
+        text-decoration: underline; }
+    #cajaGlobal .cajaCabecera .tituloContacto {
+      grid-area: contacto;
+      display: flex;
+      justify-content: start;
+      padding-left: 22%; }
+      #cajaGlobal .cajaCabecera .tituloContacto .animate__animated animate__backInDown {
+        font-family: 'Source Serif Pro', serif;
+        font-size: 2.5rem; }
+  #cajaGlobal .cajaCuerpo {
+    grid-area: cuerpo;
+    display: grid;
+    grid-template-rows: 0.1fr 0.1fr 0.2fr 0.3fr 0.1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "datosPersonales" "nombre" "email" "mensaje" "boton";
+    justify-items: center;
+    align-items: center;
+    -webkit-animation: scale-up-hor-left 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: scale-up-hor-left 1s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
+
+@keyframes scale-up-hor-left {
+  0% {
+    -webkit-transform: scaleX(0.4);
+    transform: scaleX(0.4);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%; }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%; } }
+    #cajaGlobal .cajaCuerpo .datosPersonales {
+      grid-area: datosPersonales; }
+      #cajaGlobal .cajaCuerpo .datosPersonales .formulario .textoDatosPersonales {
+        font-family: 'Source Serif Pro', serif;
+        text-transform: uppercase;
+        margin-bottom: 20px; }
+    #cajaGlobal .cajaCuerpo .formularioNombre {
+      grid-area: nombre;
+      margin-bottom: 10px; }
+      #cajaGlobal .cajaCuerpo .formularioNombre .formularioNombreEstilo {
+        font-family: 'Source Serif Pro', serif; }
+    #cajaGlobal .cajaCuerpo .formularioEmail {
+      grid-area: email; }
+      #cajaGlobal .cajaCuerpo .formularioEmail .formularioEmailEstilo {
+        font-family: 'Source Serif Pro', serif;
+        padding-right: 95px; }
+    #cajaGlobal .cajaCuerpo .formularioMensaje {
+      grid-area: mensaje;
+      font-family: 'Source Serif Pro', serif;
+      font-weight: 400; }
+      #cajaGlobal .cajaCuerpo .formularioMensaje .formularioMensajeTexto {
+        margin-bottom: 10px;
+        padding-left: 10px; }
+    #cajaGlobal .cajaCuerpo .botonEnviar {
+      grid-area: boton;
+      border-radius: 50%; }
+      #cajaGlobal .cajaCuerpo .botonEnviar .botonEnviarEstilo {
+        width: 100px;
+        height: 50px;
+        border-radius: 20%;
+        font-family: 'Source Serif Pro', serif;
+        font-size: 1rem;
+        font-weight: 600;
+        background-color: white; }
+
+@media (max-width: 1024px) {
+  #fondo #cajaGlobal {
+    display: grid;
+    grid-template-rows: 0.4fr 1.1fr 1.5fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "cabecera"  "cuerpo" "cuerpo"; }
+    #fondo #cajaGlobal .cajaCabecera .cajaCabeceraInicio {
+      grid-area: inicio;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    #fondo #cajaGlobal .cajaCabecera .tituloContacto {
+      grid-area: contacto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right: 65%; }
+    #fondo #cajaGlobal .cajaCuerpo {
+      grid-area: cuerpo;
+      display: grid;
+      grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "datosPersonales" "nombre" "email" "mensaje" "boton";
+      justify-items: center;
+      align-items: center; } }
+
+@media (max-width: 320px) {
+  #cajaGlobal {
+    width: 320px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "cabeceraSM" "cuerpoSM"; }
+    #cajaGlobal .cajaCabecera {
+      grid-area: cabeceraSM;
+      grid-area: cabecera;
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "inicio" "contacto"; }
+      #cajaGlobal .cajaCabecera .cajaCabeceraInicio {
+        grid-area: inicio;
+        position: relative;
+        right: 380px; }
+      #cajaGlobal .cajaCabecera .tituloContacto {
+        grid-area: contacto;
+        position: relative;
+        right: 90px; }
+        #cajaGlobal .cajaCabecera .tituloContacto h2 {
+          font-size: 1.2rem; }
+  .cajaCuerpo {
+    grid-area: cuerpoSM;
+    display: flex;
+    flex-direction: column;
+    justify-items: left;
+    align-items: left; }
+    .cajaCuerpo .datosPersonales {
+      position: relative;
+      right: 280px; }
+    .cajaCuerpo .botonEnviar {
+      position: relative;
+      right: 280px; } }
+
+* {
+  margin: 0;
+  padding: 0;
+  Box-sizing: border-box; }

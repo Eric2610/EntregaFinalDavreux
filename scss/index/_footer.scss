@@ -1,0 +1,105 @@
+footer{
+    height: 10vh;
+    grid-area: footer;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "contacto titulofooter redes" ;
+    justify-items: center;
+    align-items: center;
+    background-color: #c19a6bd0;
+
+    #contacto{
+        grid-area: contacto;
+        .contactoEnlace{
+            @include reseteoListas;
+            .contactoEnlaceEstilo{
+                color:black;
+                font-size: 1.2rem;
+            }
+        }
+    }
+    #tituloFooter{
+        grid-area: titulofooter;
+        .tituloFooterEstilo{
+            font-family:'Source Serif Pro', serif;
+            font-weight: 900;
+            font-size: 2rem;
+        }
+    }
+    #redes{
+        grid-area: redes;
+        .redesTexto{
+            display: inline-block;
+            font-size: 1.5rem;
+            padding-right: 10px;
+            position: relative;
+            bottom: 20px;  
+        }
+        .fb, .wpp, .yt, .tw{
+            height: 30px;
+            display: inline-block;
+            margin: 10px;
+        }
+    }
+}
+
+@include media-up(lg){
+    footer{
+        height: 15vh;
+        grid-area: footer;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 0.5fr 1.5fr 0.5fr;
+        grid-template-areas: 
+        "contacto titulofooter redes" ;
+        justify-items: center;
+        align-items: center;
+        background-color: #c19a6bd0;
+        #contacto{
+            .contactoEnlace{
+                .contactoEnlaceEstilo{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        #redes{
+            .redesTexto{
+                display: $desaparece;
+            }
+            .fb, .wpp, .yt, .tw{
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+        
+}
+
+@include media-up(sm){
+    footer{
+        height: 10vh;
+        #contacto{
+            .contactoEnlace{
+               .contactoEnlaceEstilo{
+                    font-size: 1rem;
+               } 
+            }
+        }
+        #tituloFooter{
+            .tituloFooterEstilo{
+                font-size: 1rem;
+                text-align: center;
+            }
+        }
+        #redes{
+            display: flex;
+            .fb, .wpp, .yt, .tw{
+                width: 15px;
+                height: 15px;
+                margin: 2px;
+            }
+        }
+    }
+}

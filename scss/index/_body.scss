@@ -1,0 +1,39 @@
+body{
+    width: 100vw;
+    height: 130vh;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "nav header header"
+    "main main main"
+    "main main main"
+    "main main main"
+    "footer footer footer";
+}
+
+@include media-up(lg){
+    body{
+        width: 1024px;
+        height: 180px;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "nav header" 
+        "main main"
+        "main main"
+        "main main"
+        "footer footer";
+        overflow-x: hidden;
+    }
+}
+
+@include media-up(sm){
+    body{
+        height: 160vh;
+        width: 320px;
+        overflow-x: hidden;
+    }
+}

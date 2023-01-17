@@ -1,0 +1,142 @@
+#grillaEconomia{
+    height: 70vh;
+    display: grid;
+    grid-template-rows: 0.5fr 1.5fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "encabezadoEco"
+    "principalEco";
+
+    #encabezadoEco{
+        grid-area: encabezadoEco;
+        display: flex;
+        align-items: center;
+        .contenedorNoticiasAlMinutoEco{
+            .inicioCajaEco{
+                @include reseteoListas;
+                margin-left: 20px;
+                padding-right: 10px;
+                .inicioEstilo{
+                    @include tituloSecundariosEstilos;
+                }
+            }
+        }
+        .tituloEconomia{
+            margin: 2px 0 0 5px;
+        }
+    }
+    #principalEco{
+        grid-area: principalEco;
+        display: flex;
+        justify-content: space-around;
+        .noticiaEconomia{
+            .cajaEnergia{
+                .imagenEnergia{
+                    width: 500px;
+                    height: 300px;
+                }
+            }
+        }
+        .noticiaEconomia2{
+            .cajaInflacion{
+                .imagenInflacion{
+                    width: 500px;
+                    height: 300px;
+                }
+            }
+        }
+        .noticiaEconomia3{
+            .cajapetroleo{
+                .imagenPetroleo{
+                    width: 500px;
+                    height: 300px;
+                }
+            }
+        }
+    }
+}
+
+@include media-up(lg){
+    #grillaEconomia{
+        #encabezadoEco{
+            .contenedorNoticiasAlMinutoEco{
+                .inicioCajaEco{
+                    .inicioEstilo{
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+            .tituloEconomia{
+                .tituloEconomiaEstilo{
+                    font-size: 1.5rem; 
+                }
+            }
+        }
+        #principalEco{
+            .noticiaEconomia{
+                .cajaEnergia{
+                    .imagenEnergia{
+                        width: 300px;
+                        height: 200px;
+                    }
+                }
+                .tituloEnergia{
+                    .tituloEnergiaTexto{
+                        text-align: center;
+                    }
+                }
+            }
+            .noticiaEconomia2{
+                .cajaInflacion{
+                    .imagenInflacion{
+                        width: 300px;
+                        height: 200px;
+                    }
+                }
+                .tituloInflacion{
+                    .tituloInflacionTexto{
+                        text-align: center;
+                    }
+                }
+            }
+            .noticiaEconomia3{
+                .cajapetroleo{
+                    .imagenPetroleo{
+                        width: 300px;
+                        height: 200px;
+                    }
+                }
+                .tituloPetroleo{
+                    .tituloPetroleoTexto{
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+@include media-up(sm){
+    #grillaEconomia{
+        height: 90vh;
+        #encabezadoEco{
+            .contenedorNoticiasAlMinutoEco{
+                .inicioCajaEco{
+                    .inicioEstilo{
+                        font-size: 1rem;
+                    }
+                }
+            }
+            .tituloEconomia{
+                .tituloEconomiaEstilo{
+                    font-size: 1rem; 
+                }
+            }
+        }
+        #principalEco{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

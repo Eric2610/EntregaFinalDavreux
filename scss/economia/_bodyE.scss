@@ -1,0 +1,27 @@
+#bodyEconomia{
+    height: 100vh;
+}
+
+@include media-up(lg){
+    body{
+        height: 180px;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "nav header" 
+        "main main"
+        "main main"
+        "main main"
+        "footer footer";
+        overflow-x: hidden;
+    }
+}
+
+@include media-up (sm){
+    #bodyEconomia{
+        height: 100vh;
+        width: 320px;
+        overflow-x: hidden;
+    }
+}

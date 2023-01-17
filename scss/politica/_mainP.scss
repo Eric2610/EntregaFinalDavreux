@@ -1,0 +1,141 @@
+#grillaPolitica{
+    height: 70vh;
+    display: grid;
+    grid-template-rows: 0.5fr 1.5fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "encabezado"
+    "principal2";
+    #encabezado{
+        grid-area: encabezado;
+        display: flex;
+        align-items: center;
+        .contenedorNoticiasAlMinuto{
+            .inicioCaja{
+                @include reseteoListas;
+                margin-left: 20px;
+                padding-right: 10px;
+                .inicioEstilo{
+                    @include tituloSecundariosEstilos;
+                }
+            }
+        }
+        .tituloPolitica{
+            .tituloPoliticaEstilo{
+                @include tituloSecundariosEstilos;
+            }
+        }
+    }
+    #principal2{
+        grid: principal2;
+        display: flex;
+        justify-content: space-around;
+        .noticiaPolitica{
+            .cajaAlberto{
+                .imagenAlberto{
+                    width: 500px;
+                }
+            }
+        }
+        .noticiaPolitica2{
+            .cajaBiden{
+                .imagenBiden{
+                    width: 500px; 
+                }
+            }
+        }
+        .noticiaPolitica3{
+            .cajaBorell{
+                .imagenBorell{
+                    width: 500px;
+                    height: 280px;
+                }
+            }
+        }
+    }
+}
+
+@include media-up(lg){
+    #grillaPolitica{
+        #encabezado{
+           .contenedorNoticiasAlMinuto{
+                .inicioCaja{
+                    .inicioEstilo{
+                        font-size: 1.5rem;
+                    }
+                }
+           }
+           .tituloPolitica{
+                .tituloPoliticaEstilo{
+                    font-size: 1.5rem;
+                }
+           }
+        }
+        #principal2{
+            display: flex;
+            .noticiaPolitica{
+                .cajaAlberto{
+                    .imagenAlberto{
+                        width: 300px;
+                    }
+                }
+                .tituloAlberto{
+                    .tituloAlbertoEstilo{
+                        text-align: center;
+                    }
+                }
+            }
+            .noticiaPolitica2{
+                .cajaBiden{
+                    .imagenBiden{
+                        width: 300px;
+                    }
+                }
+                .tituloBiden{
+                    .tituloBidenEstilo{
+                        text-align: center;
+                    }
+                }
+            }
+            .noticiaPolitica3{
+                .cajaBorell{
+                    .imagenBorell{
+                        width: 300px;
+                        height: 170px;
+                    }
+                }
+                .tituloBorell{
+                    .tituloBorellEstilo{
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-up(sm){
+    #grillaPolitica{
+        height: 80vh;
+        #encabezado{
+            .contenedorNoticiasAlMinuto{
+                .inicioCaja{
+                    .inicioEstilo{
+                        font-size: 1rem;
+                    }
+                }
+            }
+            .tituloPolitica{
+               .tituloPoliticaEstilo{
+                font-size: 1rem;
+               } 
+            }
+        }
+        #principal2{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

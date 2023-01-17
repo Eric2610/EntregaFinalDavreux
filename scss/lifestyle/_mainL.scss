@@ -1,0 +1,145 @@
+#grillaLife{
+    height: 70vh;
+    display: grid;
+    grid-template-rows: 0.5fr 1.5fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "encabezadoLife"
+    "principalLife";
+
+    #encabezadoLife{
+        grid-area: encabezadoLife;
+        display: flex;
+        align-items: center;
+        .contenedorNoticiaAlMinutoLife{
+            .cajaLifeNoticias{
+                @include reseteoListas;
+                margin-left: 20px;
+                padding-right: 10px;
+                .inicioEstilo{
+                    @include tituloSecundariosEstilos;
+                }
+            }
+        }
+        .tituloLife{
+            margin: 2px 0 0 5px;
+        }
+    }
+
+
+    #principalLife{
+        grid-area: principalLife;
+        display: flex;
+        justify-content: space-around;
+        .noticiaLife{
+            .cajaViaje{
+                .imagenViaje{
+                    width: 500px;
+                    height: 300px;
+                }
+            }
+        }
+        .noticiaLife2{
+            .cajaHoroscopo{
+                .imagenHoroscopo{
+                    width: 500px;
+                    height: 300px;
+                }
+            }
+        }
+        .noticiaLife3{
+            .cajaTech{
+                .imagenTech{
+                    width: 500px;
+                    height: 300px;
+                }
+            }
+        }
+    }
+}
+
+@include media-up(lg){
+    #grillaLife{
+        #encabezadoLife{
+            .contenedorNoticiaAlMinutoLife{
+                .cajaLifeNoticias{
+                    .inicioEstilo{
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+            .tituloLife{
+                .tituloLifeEstilo{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        #principalLife{
+            .noticiaLife{
+                .cajaViaje{
+                    .imagenViaje{
+                        width: 300px;
+                        height: 200px;
+                    }
+                }
+                .tituloViaje{
+                    .tituloViajeTexto{
+                        text-align: center;
+                    }
+                }
+            }
+            .noticiaLife2{
+                .cajaHoroscopo{
+                    .imagenHoroscopo{
+                        width: 300px;
+                        height: 200px;
+                    }
+                }
+                .tituloHoroscopo{
+                    .tituloHoroscopoTexto{
+                        text-align: center;
+                    }
+                }
+            }
+            .noticiaLife3{
+                .cajaTech{
+                    .imagenTech{
+                        width: 300px;
+                        height: 200px;
+                    }
+                }
+                .tituloTech{
+                    .tituloTechTexto{
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-up(sm){
+    #grillaLife{
+        height: 90vh;
+        #encabezadoLife{
+            .contenedorNoticiaAlMinutoLife{
+                .cajaLifeNoticias{
+                    .inicioEstilo{
+                        font-size: 1rem;
+                    }
+                }
+            }
+            .tituloLife{
+                .tituloLifeEstilo{
+                    font-size: 1rem;
+                }
+            }
+        }
+        #principalLife{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
